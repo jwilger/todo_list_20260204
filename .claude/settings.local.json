@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:mynixos.com)",
+      "WebFetch(domain:search.nixos.org)",
+      "Bash(nix flake check:*)",
+      "Bash(nix develop:*)"
+    ]
+  },
+  "outputStyle": "sdlc:sdlc-marvin",
+  "spinnerTipsEnabled": false
+}

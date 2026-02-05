@@ -77,9 +77,30 @@ This project uses git-spice for stacked PRs:
 - `gs stack submit` - Submit all stacked PRs
 - `gs branch create <name>` - Create new stacked branch
 
+### Branch Protection
+
+The `main` branch is protected with the following rules:
+- All changes must be made via Pull Requests
+- All PR conversations must be resolved before merging
+- Only squash merges are allowed
+- No approval required (solo project)
+
+### Pull Request Workflow
+
+**IMPORTANT:** All work must be submitted via Pull Requests for review.
+
+1. Create a feature branch for your work
+2. Make commits following conventional commit format
+3. Create a PR with a conventional commit format title and description
+4. After review, squash merge using the PR title and description as the commit message
+
+The repository is configured to automatically use the PR title and description as the squash merge commit message.
+
 ## Commit Message Guidelines
 
-Use commitizen-style commit messages:
+**CRITICAL:** Use conventional commit format for BOTH individual commits AND PR titles/descriptions.
+
+### Format
 
 ```
 <type>(<scope>): <subject>
@@ -89,7 +110,12 @@ Use commitizen-style commit messages:
 
 **Types:** feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
 
-Commit messages should explain the *WHY*, not just what changed.
+### Guidelines
+
+- Commit messages should explain the *WHY*, not just what changed
+- PR titles must follow the same format as commit messages
+- PR descriptions should provide context and motivation for the changes
+- The squashed merge commit will use the PR title and description, so make them meaningful
 
 ## Building and Running
 
